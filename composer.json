@@ -1,0 +1,36 @@
+{
+  "name": "tcd-posts",
+  "description": "WordPress theme built with _s and @mrmrs tools",
+  "authors": [
+    {
+      "name": "Sean McHenry",
+      "email": "sean@tincupdigital.com"
+    }
+  ],
+  "config": {
+    "vendor-dir": "packages"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    }
+  ],
+  "require": {
+    "composer/installers": "~1.0",
+    "jjgrainger/wp-custom-post-type-class": "*",
+    "tgmpa/tgm-plugin-activation": "*",
+    "wpackagist-plugin/force-regenerate-thumbnails": "*",
+    "wpackagist-plugin/imsanity": "*",
+    "wpackagist-plugin/simple-page-sidebars": "*"
+  },
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}": ["type:wordpress-plugin"],
+      "inc/vendor/{$name}": [
+        "tgmpa/tgm-plugin-activation",
+        "jjgrainger/wp-custom-post-type-class"
+      ]
+    }
+  }
+}

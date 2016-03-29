@@ -1,0 +1,65 @@
+/**
+ * _content.scss
+ */
+
+.site {}
+
+/*
+Header Area
+ */
+.header-area {
+  padding-top: 1rem;
+
+  @include break-sm {
+    padding-top: 2rem;
+  }
+  @include break-md {
+    padding-left: 3rem;
+  }
+}
+.client-logo-area {
+  img {
+    max-width: 200px;
+    max-height: 150px;
+  }
+
+  @include break-sm {
+    float: right;
+  }
+}
+
+/*
+Content Area
+ */
+.content-area {
+  padding: 2.25rem 3rem;
+  background-color: white;
+  border: 1px solid $border-color;
+}
+
+/*
+Phases
+ */
+.project-phase {
+  &:last-of-type {
+    margin-bottom: 0 !important;
+  }
+}
+.phase-title {
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $border-color;
+}
+
+/*
+Misc.
+ */
+.error404, .blog {
+  .content-area {
+    margin-top: 1rem;
+
+    @include break-sm {
+      margin-top: 2rem;
+    }
+  }
+}

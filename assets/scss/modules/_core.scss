@@ -1,0 +1,48 @@
+/**
+ * _core.scss
+ */
+
+/*
+Elements
+ */
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  @include font-smoothing(on);
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: $site-bg-color;
+}
+
+a {
+  text-decoration: none;
+  @include link-color;
+  @include animate(color);
+
+  &:focus {
+    outline: thin dotted $border-color;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+hr, ul, ol, dd, table {
+  margin-bottom: $margin-p;
+}
+
+/*
+Clearings
+ */
+.clear,
+.entry-content,
+.comment-content,
+.site-header,
+.site-content,
+.site-footer {
+  @include clearfix;
+}

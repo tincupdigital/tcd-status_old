@@ -1,0 +1,53 @@
+/**
+ * _variables.scss
+ */
+
+/*
+Typography
+ */
+/* Variables */
+$open-sans: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+
+/* Definitions */
+$body-font: $open-sans;
+
+/* Sizes */
+$font-size--xs: 14px !default;
+$font-size--sm: 15px !default;
+$font-size--lg: 16px !default;
+
+/*
+Colors
+ */
+// brand color map function
+@function brand-color($key: 'blue') {
+  @return map-get($brand-colors, $key);
+}
+
+/* Variables */
+$gray-dark: #222;
+$gray-light: #EDEDED;
+$gray-medium: #D0D0D0;
+
+$olive: #AEB552;
+
+/* Definitions */
+$border-color: $gray-medium;
+$text-color: $gray-dark;
+$site-bg-color: $gray-light;
+
+$link-color: $olive;
+$button-color: $link-color;
+
+/*
+Breakpoints
+ */
+$break-xs: 35rem !default;
+$break-sm: 48rem !default;
+$break-md: 62rem !default;
+$break-lg: 75rem !default;
+
+/*
+Margins
+ */
+$margin-p: 1.3rem;

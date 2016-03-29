@@ -1,0 +1,133 @@
+/**
+ * _mixins.scss
+ */
+
+/*
+Animation
+ */
+@mixin animate($transition: all, $time: .25s) {
+  transition: $transition $time ease;
+}
+@mixin no-animate() {
+  transition: none;
+}
+
+/*
+Antialiasing
+ */
+@mixin font-smoothing($value: on) {
+  @if ($value == on) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+/*
+Background cover
+ */
+@mixin bg-cover($position: 50% 50%) {
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*
+Buttons
+ */
+@mixin button {
+  @extend .btn, .btn-primary;
+}
+
+/*
+Clearfix
+ */
+@mixin clearfix() {
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+    table-layout: fixed;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/*
+Image Classes
+ */
+@mixin image-center() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin image-hover {
+  -webkit-backface-visibility: hidden;
+  @include animate(opacity);
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+/*
+Link Color
+ */
+@mixin link-color($color: $link-color, $hover: darken($link-color, 10%)) {
+  color: $color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $hover;
+  }
+}
+
+/*
+Media queries
+ */
+@mixin break-xs {
+  @media (min-width: $break-xs) {
+    @content
+  }
+}
+@mixin break-sm {
+  @media (min-width: $break-sm) {
+    @content
+  }
+}
+@mixin break-md {
+  @media (min-width: $break-md) {
+    @content
+  }
+}
+@mixin break-lg {
+  @media (min-width: $break-lg) {
+    @content
+  }
+}
+
+/*
+Screen readers
+ */
+@mixin sr-only {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/*
+Vertical centering
+ */
+@mixin vert-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
