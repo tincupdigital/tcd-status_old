@@ -58,7 +58,7 @@ get_header(); ?>
                 // loop through rows
                 while ( have_rows( 'phase_rounds' ) ): the_row(); ?>
                   <div class="project-round mb2">
-                    <h4 class="round-number h3 mt0">Round <?php echo $round_num; ?></h4>
+                    <h4 class="round-number h3 mt0">Round <?php echo str_pad($round_num, 2, '0', STR_PAD_LEFT); ?></h4>
 
                     <?php /* Content */
                     if ( get_sub_field( 'round_content' ) ) {
