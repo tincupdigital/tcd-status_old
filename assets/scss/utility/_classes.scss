@@ -88,6 +88,9 @@ Text
 .txt--lower { text-transform: lowercase; }
 .txt--upper { text-transform: uppercase; }
 
+.txt--light { color: lighten($text-color, 35%); }
+.txt--small { font-size: 0.9375rem; }
+
 /*
 Vertical alignment
  */

@@ -19,7 +19,6 @@ Header Area
 }
 .client-logo-area {
   img {
-    max-width: 200px;
     max-height: 150px;
   }
 
@@ -32,9 +31,13 @@ Header Area
 Content Area
  */
 .content-area {
-  padding: 2.25rem 3rem;
+  padding: 1.5rem 2.25rem;
   background-color: white;
   border: 1px solid $border-color;
+
+  @include break-sm {
+    padding: 2.25rem 3rem;
+  }
 }
 
 /*

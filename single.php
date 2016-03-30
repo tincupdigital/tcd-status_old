@@ -13,7 +13,7 @@ get_header(); ?>
   <div class="header-area">
     <div class="row middle-xs">
       <!-- Project name -->
-      <div class="col-xs-12 last-xs col-sm-6 first-sm">
+      <div class="col-xs-8 col-sm-6">
         <div class="client-info-area mb2">
           <h1 class="client-name"><?php the_title(); ?></h1>
           <h2 class="project-name mt0 txt--400"><?php the_field( 'project_name' ); ?></h2>
@@ -21,7 +21,7 @@ get_header(); ?>
       </div>
 
       <!-- Project logo -->
-      <div class="col-xs-12 first-xs col-sm-6 last-sm">
+      <div class="col-xs-4 col-sm-6">
         <?php if ( get_field( 'client_logo' ) ) {
           $logo = get_field( 'client_logo' ); ?>
 
@@ -43,28 +43,33 @@ get_header(); ?>
           <div class="project-phase mb3">
             <h3 class="phase-title h2 mt0"><?php the_sub_field( 'phase_title' ); ?></h3>
 
-            <?php /* Rounds */
-            if ( have_rows( 'phase_rounds' ) ):
+            <div class="project-rounds">
+              <?php /* Date */
+              $date = DateTime::createFromFormat( 'Ymd', get_sub_field( 'phase_date' ) ); ?>
+              <div class="round-date mb1">
+                <span class="txt--light txt--small"><?php echo $date->format( 'F j, Y' ); ?></span>
+              </div>
 
-              // set a counter to use for round numbers
-              $round_num = 1;
+              <?php /* Rounds */
+              if ( have_rows( 'phase_rounds' ) ):
+                // set a counter to use for round numbers
+                $round_num = 1;
 
-              // loop through rows
-              while ( have_rows( 'phase_rounds' ) ): the_row(); ?>
-                <div class="project-round mb2">
-                  <h4 class="round-number h3 mt0">Round <?php echo $round_num; ?></h4>
+                // loop through rows
+                while ( have_rows( 'phase_rounds' ) ): the_row(); ?>
+                  <div class="project-round mb2">
+                    <h4 class="round-number h3 mt0">Round <?php echo $round_num; ?></h4>
 
-                  <?php /* Content */
-                  if ( get_sub_field( 'round_content' ) ) {
-                    echo wpautop( get_sub_field( 'round_content' ) );
-                  } ?>
-                </div>
+                    <?php /* Content */
+                    if ( get_sub_field( 'round_content' ) ) {
+                      echo wpautop( get_sub_field( 'round_content' ) );
+                    } ?>
+                  </div>
 
-              <?php // increment the counter
-              $round_num++;
-
-              endwhile;
-            endif; ?>
+                  <?php // increment the counter
+                  $round_num++;
+                endwhile;
+              endif; ?>
           </div>
         <?php endwhile; ?>
       </div>

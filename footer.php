@@ -13,15 +13,15 @@
 
         </div><!-- #content -->
 
-        <footer id="colophon" class="site-footer txt--center" role="contentinfo">
-          <div class="site-info py1">
-            <span class="copyright">&copy; <?php echo date( 'Y' ); ?> <a href="http://www.tincupdigital.com">Tin Cup Digital</a>, All Rights Reserved.</span>
-          </div><!-- .site-info -->
-        </footer><!-- #colophon -->
-
       </div>
     </div><!-- .row -->
   </div><!-- .container -->
+
+  <footer id="colophon" class="site-footer txt--center txt--light" role="contentinfo">
+    <div class="site-info py1">
+      <span class="copyright">&copy; <?php echo date( 'Y' ); ?> <a href="http://www.tincupdigital.com">Tin Cup Digital</a>, All Rights Reserved.</span>
+    </div><!-- .site-info -->
+  </footer><!-- #colophon -->
 
 </div><!-- #page -->
 

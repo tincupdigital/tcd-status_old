@@ -1,12 +1,12 @@
 {
-  "name": "tcd-posts",
+  "name": "tcd-status",
   "version": "1.0.0",
   "author": "Sean McHenry",
   "homepage": "http://www.tincupdigital.com",
   "description": "WordPress theme built with _s and @mrmrs tools",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tincupdigital/tincupdigital.git"
+    "url": "https://github.com/tincupdigital/tcd-status.git"
   },
   "license": "ISC",
   "scripts": {
