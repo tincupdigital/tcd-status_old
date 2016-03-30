@@ -46,3 +46,23 @@ Clearings
 .site-footer {
   @include clearfix;
 }
+
+/*
+Alignment
+ */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: $margin-p;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: $margin-p;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
