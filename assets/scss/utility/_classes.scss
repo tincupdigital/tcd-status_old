@@ -5,27 +5,27 @@
 /*
 Colors
  */
-.color--body { color: $text-color; }
-.color--link { color: $link-color; }
+.color-body { color: $text-color; }
+.color-link { color: $link-color; }
 
 /*
 Display
  */
-.dsp--bl { display: block; }
-.dsp--in { display: inline; }
-.dsp--ib { display: inline-block; }
+.dsp-bl { display: block; }
+.dsp-in { display: inline; }
+.dsp-ib { display: inline-block; }
 
 /*
 Floats
  */
-.fl--left { float: left; }
-.fl--right { float: right; }
+.fl-left { float: left; }
+.fl-right { float: right; }
 
 /*
 Images
  */
-.img--round { border-radius: 50%; }
-.img--center { @include image-center; }
+.img-round { border-radius: 50%; }
+.img-center { @include image-center; }
 
 /*
 Hidden
@@ -62,7 +62,7 @@ Mixins
 /*
 Position
  */
-.pos--rel { position: relative; }
+.pos-rel { position: relative; }
 
 /*
 Stack order
@@ -78,24 +78,24 @@ Stack order
 /*
 Text
  */
-.txt--center { text-align: center; }
-.txt--right { text-align: right; }
+.txt-center { text-align: center; }
+.txt-right { text-align: right; }
 
-.txt--600 { font-weight: 600; }
-.txt--400 { font-weight: 400; }
-.txt--300 { font-weight: 300; }
+.txt-600 { font-weight: 600; }
+.txt-400 { font-weight: 400; }
+.txt-300 { font-weight: 300; }
 
-.txt--lower { text-transform: lowercase; }
-.txt--upper { text-transform: uppercase; }
+.txt-lower { text-transform: lowercase; }
+.txt-upper { text-transform: uppercase; }
 
-.txt--light { color: lighten($text-color, 35%); }
-.txt--small { font-size: 0.9375rem; }
+.txt-light { color: lighten($text-color, 35%); }
+.txt-small { font-size: 0.9375rem; }
 
 /*
 Vertical alignment
  */
-.va--top { vertical-align: top; }
-.va--middle { vertical-align: middle; }
+.va-top { vertical-align: top; }
+.va-middle { vertical-align: middle; }
 
 /*
 Visible
