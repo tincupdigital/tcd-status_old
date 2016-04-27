@@ -22,7 +22,7 @@ var Roots = {
   /* Common */
   common: {
     init: function() {
-      $('a').live('click', function() {
+      $('.content-area a').live('click', function() {
         window.open($(this).attr('href'));
         return false;
       });

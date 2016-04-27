@@ -66,3 +66,11 @@ function _s_remove_cat_tag_meta() {
   remove_meta_box( 'tagsdiv-post_tag','post','normal' );
 }
 add_action('admin_menu','_s_remove_cat_tag_meta');
+
+/**
+ * Add checkmark shortcode
+ */
+function _s_check_shortcode() {
+  return '<span class="checkmark">&#10004;</span>';
+}
+add_shortcode( 'check', '_s_check_shortcode' );
