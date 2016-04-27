@@ -6,7 +6,23 @@ module.exports = function(grunt) {
   // show elapsed time
   require('time-grunt')(grunt);
 
+  var jsFileList = [
+    'assets/js/concat/*.js',
+    'assets/js/_*.js'
+  ];
+
   grunt.initConfig({
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      all: [
+        'Gruntfile.js',
+        'assets/js/*.js',
+        '!assets/js/scripts.js',
+        '!assets/**/*.min.*'
+      ]
+    },
     sass: {
       dev: {
         options: {
@@ -24,6 +40,22 @@ module.exports = function(grunt) {
         },
         files: {
           'assets/css/style.min.css': 'assets/scss/style.scss'
+        }
+      }
+    },
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: [jsFileList],
+        dest: 'assets/js/scripts.js',
+      },
+    },
+    uglify: {
+      dist: {
+        files: {
+          'assets/js/scripts.min.js': [jsFileList]
         }
       }
     },
@@ -63,10 +95,14 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('dev', [
-    'sass:dev'
+    'jshint',
+    'sass:dev',
+    'concat'
   ]);
   grunt.registerTask('build', [
+    'jshint',
     'sass:build',
-    'autoprefixer:build'
+    'autoprefixer:build',
+    'uglify'
   ]);
 };
