@@ -22,9 +22,20 @@ var Roots = {
   /* Common */
   common: {
     init: function() {
-      $('.content-area a').live('click', function() {
-        window.open($(this).attr('href'));
-        return false;
+      // add 'magnific' class to image anchor links
+      $('.content-area a').filter(function() {
+        return $(this).attr('href').match(/\.(jpg|png|gif)/i);
+      }).addClass('magnific');
+
+      /* Magnific */
+      $('.magnific').magnificPopup({
+        type: 'image',
+        image: {
+    			verticalFit: false
+    		},
+        gallery: {
+          enabled: true
+        }
       });
     }
   },
